@@ -1,0 +1,145 @@
+/* =========================
+   Base Styles & Variables
+   ========================= */
+:root {
+  --primary-color: #4e8cff;
+  --secondary-color: #f5f7fa;
+  --text-color: #333;
+  --accent-color: #ff6f61;
+  --font-family: 'Segoe UI', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* =========================
+   Header
+   ========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header #theme-toggle {
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+header #theme-toggle:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* =========================
+   Navigation Placeholder
+   ========================= */
+nav#filters {
+  background-color: #e9eef5;
+  padding: 1rem;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+/* =========================
+   Timeline Section
+   ========================= */
+main {
+  padding: 2rem;
+}
+
+#timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Placeholder event marker style */
+.event-marker {
+  background: white;
+  border: 2px solid var(--primary-color);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.event-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.event-label {
+  font-weight: bold;
+}
+
+/* =========================
+   Modal Base Styles
+   ========================= */
+#modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+#modal.active {
+  display: flex;
+}
+
+#modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* =========================
+   Responsive Breakpoints
+   ========================= */
+
+/* Tablet Layout (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Layout (≥1024px) */
+@media (min-width: 1024px) {
+  #timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
